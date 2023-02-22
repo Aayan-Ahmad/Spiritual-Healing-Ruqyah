@@ -67,6 +67,7 @@ section .text-alignment
     #about p
     {
         padding-top: 20px;
+        font-size: small;
         width: 80%;
     }
 
@@ -78,25 +79,31 @@ section .text-alignment
     #Al-Fatiha p
     {
         width: 90%;
+        font-size: small;
     }
     #surah-Kursi p
     {
         width: 90%;
+        font-size: small;
     }
     #surah-Ikhlas p
     {
         width: 90%;
+        font-size: small;
     }
     #surah-Falaq p
     {
         width: 90%;
+        font-size: small;
     }
     #surah-Nas p
     {
         width: 90%;
+        font-size: small;
     }
     #footer p
     {
         width: 90%;
+        font-size: small;
     }
 }
