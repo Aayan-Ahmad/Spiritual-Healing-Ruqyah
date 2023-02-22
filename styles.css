@@ -1,0 +1,102 @@
+#full-body
+{
+    margin: 0;
+    background-color: #fffeed;
+}
+#heading .navbar
+{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+.content
+{
+    padding-top: 2%;
+    text-align: center;
+}
+.text-style
+{
+    color: aliceblue;
+    font-family: Georgia, serif;
+}
+.text-alignment
+{
+    text-align:justify;
+    width: 70%;
+    padding-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    padding-bottom: 3%;
+}
+.heading-alignment
+{
+    text-align: center;
+    padding-top: 3%;
+}
+#about #warning
+{
+    text-align: center;
+}
+
+.text-success
+{
+    font-family: "Montserrat Black";
+}
+
+
+
+.red-color
+{
+    color: red;
+}
+
+section .text-alignment
+{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#footer p
+{
+    margin-bottom: 0;
+    text-align: center;
+}
+
+@media (max-width: 991px)
+{
+    #about p
+    {
+        padding-top: 20px;
+        width: 80%;
+    }
+
+    #about #abouth
+    {
+        margin-top: 60px;
+        
+    }
+    #Al-Fatiha p
+    {
+        width: 90%;
+    }
+    #surah-Kursi p
+    {
+        width: 90%;
+    }
+    #surah-Ikhlas p
+    {
+        width: 90%;
+    }
+    #surah-Falaq p
+    {
+        width: 90%;
+    }
+    #surah-Nas p
+    {
+        width: 90%;
+    }
+    #footer p
+    {
+        width: 90%;
+    }
+}
