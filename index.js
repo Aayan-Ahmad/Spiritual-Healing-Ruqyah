@@ -156,6 +156,7 @@ function surah_fatiha()
 
 //-----------------------------------------------------------
                         //variables
+setTimeout(function(){alert("Open this site on 'Google Chrome'")} ,4000);
 var soundClass = "abcd";
 var condition = [];
 var classes = [];
