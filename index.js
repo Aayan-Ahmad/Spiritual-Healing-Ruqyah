@@ -1,3 +1,14 @@
+function pauseAllExcept(class_name)
+{
+    $("." + class_name).removeClass("pauseA");
+    for (var i = 0; i < numberOfAudios - 1; i++)
+    {
+        $(".pauseA")[i].pause();
+    }
+    $("." + class_name).addClass("pauseA");
+}
+
+
 function scrollTo(elementId)
 {
     $('html, body').animate({
@@ -98,7 +109,7 @@ function surah_nas()
     soundClass = "an";
     condition = [12,19,24,30,38,47,57,63,66,73];
     classes = ["1n","2n","3n","4n","5n","6n","7n","8I","9I","10I"];
-    
+    pauseAllExcept(soundClass);
     
      interval_6 = setInterval(crnt_time, 1000);
 }
@@ -110,8 +121,7 @@ function surah_falaq()
     soundClass = "audio_falaq";
     condition = [13,16,20,25,32,39,57,63,66,73];
     classes = ["1f","2f","3f","4f","5f","6f","7f","8I","9I","10I"];
-    
-    
+    pauseAllExcept(soundClass);
      interval_6 = setInterval(crnt_time, 1000);
 }
 //ikhlas
@@ -123,7 +133,7 @@ function surah_ikhlas()
     soundClass = "ai";
     condition = [12,16,18,21,29,47,57,63,66,73];
     classes = ["1I","2I","3I","4I","5I","6I","7I","8I","9I","10I"];
-    
+    pauseAllExcept(soundClass);
     
      interval_6 = setInterval(crnt_time, 1000);
 }
@@ -135,7 +145,7 @@ function surah_kursi()
     soundClass = "ak";
     condition = [11,20,27,33,41,47,57,63,66,73];
     classes = ["1k","2k","3k","4k","5k","6k","7k","8k","9k","10k"];
-    
+    pauseAllExcept(soundClass);
     
      interval_6 = setInterval(crnt_time, 1000);
 
@@ -148,6 +158,7 @@ function surah_fatiha()
     soundClass = "af";
     condition = [5,12,18,27,33,42,51,70,80,90];
     classes = ["1","2","3","4","5","6","7", "0","0","0"];
+    pauseAllExcept(soundClass);
     
     
     interval_6 = setInterval(crnt_time, 1000);
@@ -164,6 +175,7 @@ var exact_time = 0;
 var currentSurah = 0;
 var autoPlayFlag = false;
 var interval_6;
+var numberOfAudios = $("audio").length;
 //-----------------------------------------------------------
                         //Al-Fatiha
 
