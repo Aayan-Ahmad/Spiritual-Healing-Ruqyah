@@ -172,7 +172,7 @@ function surah_fatiha()
 
 //-----------------------------------------------------------
                         //variables
-setTimeout(function(){alert("Open this site on 'Google Chrome'")} ,2000);  //gives an alert after 4 sec
+setTimeout(function(){alert("Open this site on 'Google Chrome'")} ,4000);  //gives an alert after 4 sec
 var soundClass = "abcd";
 var condition = [];
 var classes = [];
@@ -222,7 +222,7 @@ $("audio").on("ended", function(){
     {
         autoPlay(currentSurah);
     }
-    if(currentSurah === 5)
+    if(currentSurah === 5 && autoPlayFlag === true)
     {
         alert("After reciting all the duas blow on your hands 3 times and rub your hands all over your body.");
         autoPlayFlag = false;
