@@ -17,17 +17,22 @@ function scrollTo(elementId)
 }
 
 
-function autoPlay()
+function autoPlay()                                       //after the user clicks the button(Start Ruqyah). autoplay will be called.  
 {
-    if(autoPlayFlag === false)
-    {
-        currentSurah = 0;
-    }
-    $("#ruqyahStart").prop( "disabled", true );
-    autoPlayFlag = true;
-    var play_list = document.querySelectorAll("audio");
-    play_list[currentSurah].play();
-
+    /*I set a flag so that if someone decides to click on the Ruqyah button after listning to surah by clicking on the play button 
+    to make sure it starts from fatiha not the next surah. for exmaple if I visit the site and I ignored the Ruqyah button at first 
+    and played surah ikhlas by pressing on the play button and after that when the currentSurah is on ikhlas and then I press the Ruqyah button 
+    it will go to the next surah rather than coming back to fatiha. */
+    if(autoPlayFlag === false)                                    
+    {                                                    
+        currentSurah = 0;                                
+    }                                                    
+    $("#ruqyahStart").prop( "disabled", true );          
+    autoPlayFlag = true;                                              //this flag is to make sure the function autoplays only when Ruqyah button is pressed.
+    var play_list = document.querySelectorAll("audio");               //stores all of the audio as a list in play_list.
+    play_list[currentSurah].play();                                   //plays the current surah. currentSurah's default value is '0'
+                                                                      //so '0' is fatiha initially it will play fatiha.mp3 as soon as it plays fatiha.mp3
+                                                                      //the function 'surah_fatiha' will be called and the value of current surah will change to 1.
 
 }
 
@@ -167,7 +172,7 @@ function surah_fatiha()
 
 //-----------------------------------------------------------
                         //variables
-setTimeout(function(){alert("Open this site on 'Google Chrome'")} ,4000);
+setTimeout(function(){alert("Open this site on 'Google Chrome'")} ,2000);  //gives an alert after 4 sec
 var soundClass = "abcd";
 var condition = [];
 var classes = [];
@@ -175,34 +180,36 @@ var exact_time = 0;
 var currentSurah = 0;
 var autoPlayFlag = false;
 var interval_6;
-var numberOfAudios = $("audio").length;
+var numberOfAudios = $("audio").length;  //takes out the number of audios in the page
 //-----------------------------------------------------------
                         //Al-Fatiha
 
-$(".af").on("play", surah_fatiha);
+$(".af").on("play", surah_fatiha);   //whenever surah fatiha is played the function "surah_fatiha" will be called
 
 //-----------------------------------------------------------
                         //Surah Kursi
 
-$(".ak").on("play", surah_kursi);
+$(".ak").on("play", surah_kursi);   //whenever ayatul kursi is played the function "surah_kursi" will be called
 
 //-----------------------------------------------------------
                         //Surah Ikhlas
 
-$(".ai").on("play", surah_ikhlas);
+$(".ai").on("play", surah_ikhlas);  //whenever Surah Ikhlas is played the function "surah_ikhlas" will be called
 
 //-----------------------------------------------------------
                         //Surah Falaq.
 
-$(".audio_falaq").on("play", surah_falaq);
+$(".audio_falaq").on("play", surah_falaq);  //whenever surah falaq is played the function "surah_falaq" will be called
 
 //-----------------------------------------------------------
                         //Surah nas.
 
 $(".an").on("play",surah_nas);
+                                //whenever surah nas is played the function "surah_nas" will be called
+//-----------------------------------------------------------
 
-
-$("#ruqyahStart").on("click", autoPlay);
+$("#ruqyahStart").on("click", autoPlay); //when someone will click on the button "ruqyahStart" is clicked the function "autoplay" will be called.
+                                         //now scroll to autoplay
 
 $("audio").on("pause", function()
 {
